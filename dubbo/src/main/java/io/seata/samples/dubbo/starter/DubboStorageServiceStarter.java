@@ -17,8 +17,12 @@
 package io.seata.samples.dubbo.starter;
 
 import io.seata.samples.dubbo.ApplicationKeeper;
+import org.apache.dubbo.common.extension.ExtensionLoader;
+import org.apache.dubbo.remoting.telnet.TelnetHandler;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.util.Set;
 
 /**
  * The type Dubbo storage service starter.
@@ -30,6 +34,9 @@ public class DubboStorageServiceStarter {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+        ExtensionLoader<TelnetHandler> extensionLoader = ExtensionLoader.getExtensionLoader(TelnetHandler.class);
+        Set<String> loadedExtensions = extensionLoader.getSupportedExtensions();
+        System.out.println("已加载telentHandler： " + loadedExtensions);
         ClassPathXmlApplicationContext storageContext = new ClassPathXmlApplicationContext(
             new String[]{"spring/dubbo-storage-service.xml"});
         storageContext.getBean("service");

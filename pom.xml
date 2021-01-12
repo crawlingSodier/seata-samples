@@ -39,7 +39,9 @@
         <netty4.version>4.1.42.Final</netty4.version>
         <org.springframework.spring.version>2.5.6.SEC03</org.springframework.spring.version>
         <junit.version>4.12</junit.version>
-        <dubbo.version>2.7.5</dubbo.version>
+<!-- dubbo 2.7.5 b版本无法加载protcol包下的 telnetHandler，只有remoting包下的能加载 TODO 查阅classloading逻辑 学习定位       -->
+<!--        <dubbo.version>2.7.5</dubbo.version>-->
+        <dubbo.version>2.7.6</dubbo.version>
         <fastjson.version>1.2.67</fastjson.version>
         <config.version>1.2.1</config.version>
         <slf4j-api.version>1.7.22</slf4j-api.version>
@@ -62,25 +64,25 @@
     </properties>
     <modules>
         <module>dubbo</module>
-        <module>springboot</module>
-        <module>nacos</module>
-        <module>springboot-dubbo-seata</module>
-        <module>tcc</module>
-        <module>springcloud-jpa-seata</module>
-        <module>nutzboot-dubbo-fescar</module>
-        <module>ha</module>
-        <module>springcloud-eureka-seata</module>
-        <module>multiple-datasource</module>
-        <module>springboot-mybatis</module>
-        <module>springcloud-nacos-seata</module>
-        <module>api</module>
-        <module>springboot-shardingsphere-seata</module>
-        <module>multiple-datasource-mybatis-plus</module>
-        <module>saga</module>
-        <module>spring-cloud-alibaba-samples</module>
-        <module>seata-spring-boot-starter-samples</module>
-        <module>seata-xa</module>
-        <module>seata-samples-jit</module>
+<!--        <module>springboot</module>-->
+<!--        <module>nacos</module>-->
+<!--        <module>springboot-dubbo-seata</module>-->
+<!--        <module>tcc</module>-->
+<!--        <module>springcloud-jpa-seata</module>-->
+<!--        <module>nutzboot-dubbo-fescar</module>-->
+<!--        <module>ha</module>-->
+<!--        <module>springcloud-eureka-seata</module>-->
+<!--        <module>multiple-datasource</module>-->
+<!--        <module>springboot-mybatis</module>-->
+<!--        <module>springcloud-nacos-seata</module>-->
+<!--        <module>api</module>-->
+<!--        <module>springboot-shardingsphere-seata</module>-->
+<!--        <module>multiple-datasource-mybatis-plus</module>-->
+<!--        <module>saga</module>-->
+<!--        <module>spring-cloud-alibaba-samples</module>-->
+<!--        <module>seata-spring-boot-starter-samples</module>-->
+<!--        <module>seata-xa</module>-->
+<!--        <module>seata-samples-jit</module>-->
     </modules>
 
     <dependencies>

@@ -40,6 +40,10 @@ public class BusinessServiceImpl implements BusinessService {
     @Override
     @GlobalTransactional(timeoutMills = 300000, name = "dubbo-demo-tx")
     public void purchase(String userId, String commodityCode, int orderCount) {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+        }
         LOGGER.info("purchase begin ... xid: " + RootContext.getXID());
         storageService.deduct(commodityCode, orderCount);
         orderService.create(userId, commodityCode, orderCount);
